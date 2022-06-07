@@ -23,7 +23,7 @@ const Home = () => {
               LEANDRO BORDON
             </h1>
             <p className="text-sm text-left sm:text-base text-black">
-              Frontend Developer
+              Web Developer
             </p>
           </div>
         </div>

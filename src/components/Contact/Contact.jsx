@@ -122,60 +122,6 @@ const Contact = () => {
                 <p className="leading-normal my-5 ">
                   From Rosario, Argentina to the World wide!
                 </p>
-
-                <span className="inline-flex">
-                  <a
-                    href="https://www.linkedin.com/in/leandro-bordon-wepdev/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="ml-4 text-gray-500"
-                  >
-                    <img className="w-5 h-5" src={Linkedin} alt="" />
-                  </a>
-                  <a
-                    target="_blank"
-                    href="https://www.instagram.com/alocerio/"
-                    className="ml-4 text-gray-500"
-                    rel="noreferrer"
-                  >
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect
-                        width="20"
-                        height="20"
-                        x="2"
-                        y="2"
-                        rx="5"
-                        ry="5"
-                      ></rect>
-                      <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-                    </svg>
-                  </a>
-                  <a
-                    href="mailto:leandrobordondev@gmail.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="ml-4 "
-                  >
-                    <svg
-                      fill="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                    </svg>
-                  </a>
-                </span>
               </div>
             </div>
           </form>

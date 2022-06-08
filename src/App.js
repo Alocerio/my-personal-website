@@ -6,6 +6,7 @@ import Contact from "./components/Contact/Contact";
 import Blog from "./pages/blog/blog";
 import video from "../src/assets/videos/video.mov";
 
+import Blog1 from "./pages/blog/minimalist";
 import Experiencia from "./components/Experiencia/Experiencia";
 import Footer from "./components/Footer/Footer";
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/about-me" element={<Experiencia />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog-page" element={<Blog1 />} />
           </Routes>
         </header>
       </div>

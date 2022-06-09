@@ -40,7 +40,7 @@ const About = () => {
             </div>
             <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l  sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
               <p className="leading-relaxed text-lg mb-4">
-                I am a FrontEnd developer and Javascript mentor. I am looking
+                I am a software engineer and Javascript mentor. I am looking
                 for an agile work environment where I am allowed to implement my
                 knowledge and encourage learning new ones. So, I'm looking for a
                 place that trusts me and allows me to evolve as a developer.

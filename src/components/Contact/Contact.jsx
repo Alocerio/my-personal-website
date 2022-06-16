@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import Notiflix from "notiflix";
 import Back from "../../utils/backBtn";
 import emailjs from "@emailjs/browser";
 
@@ -10,22 +11,21 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_7h2xlzs",
-        "template_llv29xm",
-        forms.current,
-        "FRKgpjzGgjXyKTrdh"
-      )
-      .then(
-        (result) => {
+    if (form.name && form.email && form.message) {
+      emailjs
+        .sendForm(
+          "service_7h2xlzs",
+          "template_llv29xm",
+          forms.current,
+          "FRKgpjzGgjXyKTrdh"
+        )
+        .then((result) => {
+          Notiflix.Notify.success("Thanks for your time!");
           setSend(true);
-          console.log("state", send);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+        });
+    } else {
+      Notiflix.Notify.warning("Fill all the fields!");
+    }
   };
 
   const handleChange = (e) => {
@@ -39,6 +39,7 @@ const Contact = () => {
     e.preventDefault();
     sendEmail(e);
   };*/
+
   const Formulario = () => {
     return (
       <>
@@ -47,6 +48,7 @@ const Contact = () => {
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
             Contact me
           </h1>
+
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
             This is our first contact! Pleased to meet you :) <br></br> *Please
             leave me your message by filling out the following form and we will
@@ -131,13 +133,13 @@ const Contact = () => {
     );
   };
 
-  const Enviado = (forms) => {
+  const Enviado = (props) => {
     return (
       <div className="lg:w-1/2 md:w-2/3 mx-auto">
         <Back />
 
-        <h1 className="sm:text-3xl text-2xl font-medium text-center title-font mb-4">
-          {forms.name} your message has been sent successfully! 🚀
+        <h1 className="sm:text-3xl text-5xl font-bold ">
+          Your message has been sent successfully! 🚀
         </h1>
         <p></p>
       </div>
@@ -146,7 +148,9 @@ const Contact = () => {
   return (
     <section className="bg-white body-font w-full relative">
       <div className=" px-5 py-24 mx-auto">
-        <div id="form-container">{send ? <Enviado /> : <Formulario />}</div>
+        <div id="form-container">
+          {send ? <Enviado props={form} /> : <Formulario />}
+        </div>
       </div>
     </section>
   );

@@ -1,10 +1,10 @@
 import React, { useState, useRef } from "react";
-import Linkedin from "../../assets/images/linkedin.png";
 import Back from "../../utils/backBtn";
 import emailjs from "@emailjs/browser";
+
 const Contact = () => {
   const [form, setForm] = useState({});
-
+  const [send, setSend] = useState(false);
   const forms = useRef();
 
   const sendEmail = (e) => {
@@ -19,7 +19,8 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          setSend(true);
+          console.log("state", send);
         },
         (error) => {
           console.log(error.text);
@@ -38,9 +39,9 @@ const Contact = () => {
     e.preventDefault();
     sendEmail(e);
   };*/
-  return (
-    <section className="bg-white body-font w-full relative">
-      <div className=" px-5 py-24 mx-auto">
+  const Formulario = () => {
+    return (
+      <>
         <Back />
         <div className="flex flex-col text-center w-full mb-12">
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
@@ -126,6 +127,26 @@ const Contact = () => {
             </div>
           </form>
         </div>
+      </>
+    );
+  };
+
+  const Enviado = (forms) => {
+    return (
+      <div className="lg:w-1/2 md:w-2/3 mx-auto">
+        <Back />
+
+        <h1 className="sm:text-3xl text-2xl font-medium text-center title-font mb-4">
+          {forms.name} your message has been sent successfully! 🚀
+        </h1>
+        <p></p>
+      </div>
+    );
+  };
+  return (
+    <section className="bg-white body-font w-full relative">
+      <div className=" px-5 py-24 mx-auto">
+        <div id="form-container">{send ? <Enviado /> : <Formulario />}</div>
       </div>
     </section>
   );
